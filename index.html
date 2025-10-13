@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Art Meets Music</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Art Meets Music</h1>
+      <p class="subtitle">Type an artist or band name to discover a random artwork from the Art Institute of Chicago.</p>
+    </header>
+
+    <div class="controls">
+      <input id="artistInput" type="text" placeholder="Search artist or band..." />
+      <button id="searchButton">Search</button>
+      <button id="surpriseButton">Surprise Pairing</button>
+      <!-- You prefer dark mode; toggle is optional -->
+      <button id="toggleTheme" title="Toggle light/dark" aria-label="Toggle theme">Light</button>
+    </div>
+
+    <main class="results" id="resultsArea">
+      <section class="music-section">
+        <h2>🎵 Music</h2>
+        <div id="musicResult">No results yet.</div>
+      </section>
+
+      <div class="separator">~~</div>
+
+      <section class="art-section">
+        <h2>🎨 Art</h2>
+        <div id="artResult">No results yet.</div>
+      </section>
+    </main>
+
+    <div id="connectionMessage" class="connection-message"></div>
+
+    <footer>
+      <p>
+        Data sourced from:
+        <a href="https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html" target="_blank" rel="noopener">iTunes Search API</a>
+        &amp;
+        <a href="https://api.artic.edu/docs/" target="_blank" rel="noopener">Art Institute of Chicago API</a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
