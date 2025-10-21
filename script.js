@@ -137,8 +137,24 @@ surpriseBtn.addEventListener('click', async () => {
   }
 });
 
+// Apply saved theme on load
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'light') document.body.classList.add('light-mode');
+
+// Function to update button icon
+function updateToggleIcon() {
+  toggleBtn.textContent = document.body.classList.contains('light-mode') ? '☾' : '☼';
+}
+
+// Set initial icon
+updateToggleIcon();
+
+// Toggle theme on click
 toggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
-  toggleBtn.textContent = document.body.classList.contains('light-mode') ? '☾' : '☼';
+  localStorage.setItem(
+    'theme',
+    document.body.classList.contains('light-mode') ? 'light' : 'dark'
+  );
+  updateToggleIcon();
 });
-

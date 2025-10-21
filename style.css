@@ -17,7 +17,10 @@ body.light-mode {
 }
 
 *{box-sizing:border-box}
+
 html,body{height:100%}
+
+/* Keep the page full viewport, center content horizontally, allow vertical layout */
 body{
   margin:0;
   background:var(--bg);
@@ -25,37 +28,57 @@ body{
   font-family: Georgia, "Times New Roman", serif;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  padding:36px 18px;
+  /* less global padding — we control vertical space inside the container */
+  padding:0 18px;
   display:flex;
-  justify-content:center;
+  justify-content:center; /* center horizontally */
+  align-items:flex-start; /* start at top so header spacing works */
+  min-height:100vh;
 }
 
+/* Container becomes a vertical column that holds header, main (flexible), footer */
 .container{
   max-width:1000px;
   width:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:100vh; /* ensure full-height to push footer down */
+  padding-top:120px; /* <-- MAIN change: lots of space before the title on initial load */
+  box-sizing:border-box;
 }
 
+/* Header: keep centered and give breathing room below */
+header{
+  text-align:center;
+  width:100%;
+  margin:0 0 16px 0; /* small gap below header before controls */
+}
 header h1{
   margin:0 0 6px 0;
   color:var(--accent);
   font-size:2.2rem;
-  text-align:center;
 }
 .subtitle{
-  margin:0 0 18px 0;
+  margin:0 auto 0 auto;
   color:var(--muted);
   text-align:center;
   font-style:normal;
+  max-width:760px;
+  font-size:0.95rem; /* keep subtitle slightly smaller */
 }
+
 
 /* Controls */
 .controls{
   display:flex;
   gap:12px;
   justify-content:center;
+  margin-top:18px;   /* new: space between header and controls */
   margin-bottom:28px;
   flex-wrap:wrap;
 }
+
 .controls input{
   width:420px;
   max-width:60%;
@@ -91,11 +114,52 @@ header h1{
   margin-bottom:24px;
   flex-wrap:wrap;
 }
+
+/* Make main results take available vertical space so footer sits at the bottom */
+main.results-wrapper {
+  width:100%;
+  flex: 1 1 auto; /* grow to fill space between header and footer */
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+/* keep previous .results styles but ensure it stays centered inside the wrapper */
+.results{
+  display:flex;
+  gap:28px;
+  align-items:flex-start;
+  justify-content:center;
+  margin-bottom:24px;
+  flex-wrap:wrap;
+  margin-top:20px; /* add a little space between controls and results */
+}
+
+/* Push footer to the bottom of the container */
+footer{
+  margin-top:auto;
+  margin-bottom:28px;
+  color:var(--muted);
+  text-align:center;
+  font-size:0.9rem;
+}
+
 .separator{
   align-self:center;
-  color:var(--muted);
-  font-size:1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 8px;
 }
+
+/* the favicon image used as separator — small and elegant */
+.separator-icon{
+  width:36px;
+  height:auto;
+  display:block;
+  border-radius:6px;
+}
+
 
 /* Cards */
 .music-section, .art-section{
@@ -150,8 +214,10 @@ footer a:hover{text-decoration:underline}
 @media (max-width:740px){
   .controls input{width:100%}
   .results{flex-direction:column; align-items:center}
-  .separator{display:none}
+  .separator{display:none} /* hide separator on very small screens */
+  .container{ padding-top:60px; } /* less top padding on small screens */
 }
+
 
 
 #toggleTheme {
