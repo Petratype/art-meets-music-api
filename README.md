@@ -1,4 +1,4 @@
-Art Meets Music 🎨🎵
+# Art Meets Music 🎨🎵
 
 Hey there! Art Meets Music is a small web experiment that I came out with to explore API on web pages. This specific searcher pairs music tracks from iTunes API with random artworks from the Art Institute of Chicago, using, again, their official API. 
 
@@ -8,7 +8,7 @@ I thought it could be an funny way to get in touch with the paintings, pottery o
 
 This project is my way of learning about APIs, web development and interactive design. A little playful exploration while improving my coding skills.
 
-🔹 How it works
+##🔹 How it works
 
 Music: Uses the iTunes Search API
  to find tracks from the artist you type.
@@ -26,13 +26,13 @@ Surprise Pairing → discover a random artwork and a music track inspired by it.
 
 It also includes a light/dark theme toggle, because, honestly, dark mode rules.
 
-🔹 Try it live
+##🔹 Try it live
 
 Click here to explore the experiment: Art Meets Music on GitHub Pages.
 
 https://petratype.github.io/art-meets-music-api
 
-🔹 Tech stack
+##🔹 Tech stack
 
 HTML / CSS / JavaScript
 
@@ -40,7 +40,7 @@ APIs: iTunes Search API & Art Institute of Chicago API
 
 No backend required, fully static site, easy to host on GitHub Pages.
 
-🔹 Notes / Learning Goals
+##🔹 Notes / Learning Goals
 
 This is a personal learning project. I’m experimenting with API calls, asynchronous JS, and interactive UI.
 
@@ -48,7 +48,7 @@ I like to host the idea on webpages to easily share it with other people and get
 
 Future improvements: add more interactive features, animations and maybe new APIs for richer pairings.
 
-🔹 Credits
+##🔹 Credits
 
 Music data from iTunes API
 
