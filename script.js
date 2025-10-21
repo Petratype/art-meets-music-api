@@ -137,8 +137,8 @@ surpriseBtn.addEventListener('click', async () => {
   }
 });
 
-// Simple theme toggle (dark/light). You said you prefer dark mode by default.
 toggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('light-mode');
-  toggleBtn.textContent = document.body.classList.contains('light-mode') ? 'Dark' : 'Light';
+  toggleBtn.textContent = document.body.classList.contains('light-mode') ? '☾' : '☼';
 });
+
