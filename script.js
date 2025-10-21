@@ -95,6 +95,8 @@ searchBtn.addEventListener('click', async () => {
     showArtCard(art);
 
     // 3) build message focused on art (90%) with small music note (10%)
+    document.getElementById('aboutHeading').style.display = 'block';
+    messageEl.style.display = 'block';
     messageEl.textContent = buildMessage(art || {}, track);
   } catch (err) {
     console.error(err);
